@@ -16,5 +16,12 @@ namespace PerMinuteTwitter
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TwitterClass.SetTwitterAuth();
+            textBox1.Text = TwitterClass.SearchForTweet("gamedev");
+
+        }
     }
 }
