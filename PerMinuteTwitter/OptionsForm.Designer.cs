@@ -137,12 +137,12 @@
             // 
             this.frequencyUpDown.Location = new System.Drawing.Point(7, 18);
             this.frequencyUpDown.Maximum = new decimal(new int[] {
-            600,
+            60,
             0,
             0,
             0});
             this.frequencyUpDown.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});

@@ -38,6 +38,8 @@
             this.optionsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitAppItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showATweetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,23 +72,27 @@
             // 
             // mainTimer
             // 
+            this.mainTimer.Enabled = true;
             this.mainTimer.Interval = 1000;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showATweetToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.optionsItem,
             this.toolStripSeparator1,
             this.exitAppItem});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(157, 54);
+            this.mainMenu.Size = new System.Drawing.Size(157, 104);
             // 
             // optionsItem
             // 
             this.optionsItem.Name = "optionsItem";
             this.optionsItem.Size = new System.Drawing.Size(156, 22);
             this.optionsItem.Text = "Options";
+            this.optionsItem.Click += new System.EventHandler(this.optionsItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -99,6 +105,18 @@
             this.exitAppItem.Size = new System.Drawing.Size(156, 22);
             this.exitAppItem.Text = "Exit Application";
             this.exitAppItem.Click += new System.EventHandler(this.exitAppItem_Click);
+            // 
+            // showATweetToolStripMenuItem
+            // 
+            this.showATweetToolStripMenuItem.Name = "showATweetToolStripMenuItem";
+            this.showATweetToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.showATweetToolStripMenuItem.Text = "Show a Tweet...";
+            this.showATweetToolStripMenuItem.Click += new System.EventHandler(this.showATweetToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(153, 6);
             // 
             // Form1
             // 
@@ -127,6 +145,8 @@
         private System.Windows.Forms.ToolStripMenuItem optionsItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitAppItem;
+        private System.Windows.Forms.ToolStripMenuItem showATweetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }
 

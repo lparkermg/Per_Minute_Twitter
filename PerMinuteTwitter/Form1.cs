@@ -16,14 +16,12 @@ namespace PerMinuteTwitter
         {
             InitializeComponent();
             TwitterClass.SetTwitterAuth();
+            mainTimer.Interval = Properties.Settings.Default.PopupFrequency*60000;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-            textBox1.Text = "";
-            
+
         }
 
         private void exitAppItem_Click(object sender, EventArgs e)
@@ -34,6 +32,11 @@ namespace PerMinuteTwitter
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Visible = false;
+            string[] tweetHolder = new string[2];
+            tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
+            appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
+            appNotifyIcon.BalloonTipText = tweetHolder[1];
+            appNotifyIcon.ShowBalloonTip(ConvertTime());
         }
 
         private void appNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -44,15 +47,36 @@ namespace PerMinuteTwitter
         private void mainTimer_Tick(object sender, EventArgs e)
         {
             string[] tweetHolder = new string[2];
-            tweetHolder = TwitterClass.SearchForTweet("gamedev");
+            tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
             appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
             appNotifyIcon.BalloonTipText = tweetHolder[1];
-            appNotifyIcon.ShowBalloonTip();
+            appNotifyIcon.ShowBalloonTip(ConvertTime());
+            mainTimer.Interval = Properties.Settings.Default.PopupFrequency * 60000;
         }
 
         private int ConvertTime()
         {
-            
+            string durationLength = Properties.Settings.Default.BalloonDuration;
+            if (durationLength == "Long")
+                return 10;
+            else
+                return 2;
+        }
+
+        private void optionsItem_Click(object sender, EventArgs e)
+        {
+            OptionsForm opsForm = new OptionsForm();
+            opsForm.Show();
+        }
+
+        private void showATweetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] tweetHolder = new string[2];
+            tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
+            appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
+            appNotifyIcon.BalloonTipText = tweetHolder[1];
+            appNotifyIcon.ShowBalloonTip(ConvertTime());
+            mainTimer.Interval = Properties.Settings.Default.PopupFrequency * 60000;
         }
 
     }
