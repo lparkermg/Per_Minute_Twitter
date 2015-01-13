@@ -15,7 +15,7 @@ namespace PerMinuteTwitter
     {
         public static void SetTwitterAuth()
         {
-            TwitterCredentials.SetCredentials("AT", "AS", "CK", "CS"); //Take out actual details before commiting to git and pushing to github.
+            TwitterCredentials.SetCredentials(); //Take out actual details before commiting to git and pushing to github.
         }
 
         public static string SearchForTweet(string searchTerm)

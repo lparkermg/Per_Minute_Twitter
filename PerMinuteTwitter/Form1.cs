@@ -23,5 +23,10 @@ namespace PerMinuteTwitter
             textBox1.Text = TwitterClass.SearchForTweet("gamedev");
 
         }
+
+        private void exitAppItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

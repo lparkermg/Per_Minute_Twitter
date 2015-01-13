@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.appNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.mainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.optionsItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitAppItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -51,6 +59,38 @@
             this.textBox1.Size = new System.Drawing.Size(522, 194);
             this.textBox1.TabIndex = 2;
             // 
+            // appNotifyIcon
+            // 
+            this.appNotifyIcon.Text = "notifyIcon1";
+            this.appNotifyIcon.Visible = true;
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionsItem,
+            this.toolStripSeparator1,
+            this.exitAppItem});
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(157, 76);
+            // 
+            // optionsItem
+            // 
+            this.optionsItem.Name = "optionsItem";
+            this.optionsItem.Size = new System.Drawing.Size(156, 22);
+            this.optionsItem.Text = "Options";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(153, 6);
+            // 
+            // exitAppItem
+            // 
+            this.exitAppItem.Name = "exitAppItem";
+            this.exitAppItem.Size = new System.Drawing.Size(156, 22);
+            this.exitAppItem.Text = "Exit Application";
+            this.exitAppItem.Click += new System.EventHandler(this.exitAppItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -60,6 +100,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.mainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,6 +110,12 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NotifyIcon appNotifyIcon;
+        private System.Windows.Forms.Timer mainTimer;
+        private System.Windows.Forms.ContextMenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem optionsItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem exitAppItem;
     }
 }
 

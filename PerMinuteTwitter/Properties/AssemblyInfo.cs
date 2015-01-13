@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PerMinuteTwitter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bath ASU")]
+[assembly: AssemblyCompany("Luke Parker")]
 [assembly: AssemblyProduct("PerMinuteTwitter")]
-[assembly: AssemblyCopyright("Copyright © Bath ASU 2015")]
+[assembly: AssemblyCopyright("Copyright © Luke Parker 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
