@@ -45,5 +45,10 @@ namespace PerMinuteTwitter
         {
             this.Close();
         }
+
+        private void OptionsForm_Load(object sender, EventArgs e)
+        {
+            tokenStatus.Text = TwitterClass.GetTokensLeft();
+        }
     }
 }

@@ -38,9 +38,12 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.freqGB = new System.Windows.Forms.GroupBox();
             this.frequencyUpDown = new System.Windows.Forms.NumericUpDown();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tokenStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.gB1.SuspendLayout();
             this.freqGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frequencyUpDown)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -155,11 +158,28 @@
             0,
             0});
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tokenStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 173);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(363, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tokenStatus
+            // 
+            this.tokenStatus.Name = "tokenStatus";
+            this.tokenStatus.Size = new System.Drawing.Size(348, 17);
+            this.tokenStatus.Spring = true;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 179);
+            this.ClientSize = new System.Drawing.Size(363, 195);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.freqGB);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
@@ -172,10 +192,13 @@
             this.MinimizeBox = false;
             this.Name = "OptionsForm";
             this.Text = "OptionsForm";
+            this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.gB1.ResumeLayout(false);
             this.gB1.PerformLayout();
             this.freqGB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.frequencyUpDown)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +216,7 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.GroupBox freqGB;
         private System.Windows.Forms.NumericUpDown frequencyUpDown;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tokenStatus;
     }
 }

@@ -1,1 +1,7 @@
-﻿
+﻿Change Log:
+
+Version 1.0.1:
+- Added Tokens Left and reset time to options form.
+
+Version 1.0:
+- Initial Release.

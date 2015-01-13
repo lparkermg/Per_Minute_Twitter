@@ -31,6 +31,13 @@ namespace PerMinuteTwitter
             return returnText; ;
         }
 
+        public static string GetTokensLeft()
+        {
+            var rateLimit = RateLimit.GetCurrentCredentialsRateLimits();
+            return "You have " + rateLimit.StatusesHomeTimelineLimit.Remaining + " tokens left. It resets at " +
+                   rateLimit.StatusesHomeTimelineLimit.ResetDateTime;
+        }
+
        /* public static string SearchTwitterJson()
         {
             return SearchJson.SearchTweets("gamedev");
