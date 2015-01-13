@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.appNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -62,9 +63,15 @@
             // appNotifyIcon
             // 
             this.appNotifyIcon.ContextMenuStrip = this.mainMenu;
+            this.appNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("appNotifyIcon.Icon")));
             this.appNotifyIcon.Text = "PerMinuteTwitter";
             this.appNotifyIcon.Visible = true;
             this.appNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.appNotifyIcon_MouseDoubleClick);
+            // 
+            // mainTimer
+            // 
+            this.mainTimer.Interval = 1000;
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
             // mainMenu
             // 

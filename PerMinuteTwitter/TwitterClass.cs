@@ -18,14 +18,17 @@ namespace PerMinuteTwitter
             TwitterCredentials.SetCredentials(); //Take out actual details before commiting to git and pushing to github.
         }
 
-        public static string SearchForTweet(string searchTerm)
+        public static string[] SearchForTweet(string searchTerm)
         {
             var searchParameter = Search.GenerateSearchTweetParameter(searchTerm);
+            string[] returnText = new string[2];
             searchParameter.Lang = Language.English;
             searchParameter.SearchType = SearchResultType.Recent;
             searchParameter.MaximumNumberOfResults = 1;
             var grabbedTweet = Search.SearchTweets(searchTerm);
-            return grabbedTweet[0].ToString();
+            returnText[0] = grabbedTweet[0].Creator.Name;
+            returnText[1] = grabbedTweet[0].Text;
+            return returnText; ;
         }
 
        /* public static string SearchTwitterJson()

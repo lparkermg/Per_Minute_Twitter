@@ -15,14 +15,15 @@ namespace PerMinuteTwitter
         public Form1()
         {
             InitializeComponent();
-            
+            TwitterClass.SetTwitterAuth();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TwitterClass.SetTwitterAuth();
-            textBox1.Text = TwitterClass.SearchForTweet("gamedev");
-
+            
+            
+            textBox1.Text = "";
+            
         }
 
         private void exitAppItem_Click(object sender, EventArgs e)
@@ -40,6 +41,19 @@ namespace PerMinuteTwitter
 
         }
 
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            string[] tweetHolder = new string[2];
+            tweetHolder = TwitterClass.SearchForTweet("gamedev");
+            appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
+            appNotifyIcon.BalloonTipText = tweetHolder[1];
+            appNotifyIcon.ShowBalloonTip();
+        }
+
+        private int ConvertTime()
+        {
+            
+        }
 
     }
 }
