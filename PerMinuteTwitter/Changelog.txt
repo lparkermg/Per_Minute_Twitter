@@ -1,5 +1,8 @@
 ﻿Change Log:
 
+Version 1.0.2:
+- Change Status bar in options form to show right information.
+
 Version 1.0.1:
 - Added Tokens Left and reset time to options form.
 

@@ -16,7 +16,7 @@ namespace PerMinuteTwitter
         {
             InitializeComponent();
             TwitterClass.SetTwitterAuth();
-            mainTimer.Interval = Properties.Settings.Default.PopupFrequency*60000;
+            mainTimer.Interval = Properties.Settings.Default.PopupFrequency;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,11 +32,7 @@ namespace PerMinuteTwitter
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Visible = false;
-            string[] tweetHolder = new string[2];
-            tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
-            appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
-            appNotifyIcon.BalloonTipText = tweetHolder[1];
-            appNotifyIcon.ShowBalloonTip(ConvertTime());
+            ShowATweet();
         }
 
         private void appNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -46,12 +42,7 @@ namespace PerMinuteTwitter
 
         private void mainTimer_Tick(object sender, EventArgs e)
         {
-            string[] tweetHolder = new string[2];
-            tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
-            appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
-            appNotifyIcon.BalloonTipText = tweetHolder[1];
-            appNotifyIcon.ShowBalloonTip(ConvertTime());
-            mainTimer.Interval = Properties.Settings.Default.PopupFrequency * 60000;
+            ShowATweet();
         }
 
         private int ConvertTime()
@@ -71,13 +62,17 @@ namespace PerMinuteTwitter
 
         private void showATweetToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ShowATweet();
+        }
+
+        private void ShowATweet()
+        {
             string[] tweetHolder = new string[2];
             tweetHolder = TwitterClass.SearchForTweet(Properties.Settings.Default.SearchTerm);
             appNotifyIcon.BalloonTipTitle = "Tweet By: " + tweetHolder[0];
             appNotifyIcon.BalloonTipText = tweetHolder[1];
             appNotifyIcon.ShowBalloonTip(ConvertTime());
-            mainTimer.Interval = Properties.Settings.Default.PopupFrequency * 60000;
+            mainTimer.Interval = Properties.Settings.Default.PopupFrequency;
         }
-
     }
 }

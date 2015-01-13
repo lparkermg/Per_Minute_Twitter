@@ -33,7 +33,7 @@ namespace PerMinuteTwitter
 
             Properties.Settings.Default.SearchTerm = searchTerm.Text;
 
-            Properties.Settings.Default.PopupFrequency = (int) frequencyUpDown.Value;
+            Properties.Settings.Default.PopupFrequency = (int) frequencyUpDown.Value*(60*1000);
         }
 
         private void applyButton_Click(object sender, EventArgs e)
@@ -49,6 +49,7 @@ namespace PerMinuteTwitter
         private void OptionsForm_Load(object sender, EventArgs e)
         {
             tokenStatus.Text = TwitterClass.GetTokensLeft();
+            frequencyUpDown.Value = (Properties.Settings.Default.PopupFrequency/1000)/60;
         }
     }
 }

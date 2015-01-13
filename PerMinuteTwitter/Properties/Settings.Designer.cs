@@ -49,7 +49,7 @@ namespace PerMinuteTwitter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
         public int PopupFrequency {
             get {
                 return ((int)(this["PopupFrequency"]));

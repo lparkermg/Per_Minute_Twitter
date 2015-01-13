@@ -34,8 +34,8 @@ namespace PerMinuteTwitter
         public static string GetTokensLeft()
         {
             var rateLimit = RateLimit.GetCurrentCredentialsRateLimits();
-            return "You have " + rateLimit.StatusesHomeTimelineLimit.Remaining + " tokens left. It resets at " +
-                   rateLimit.StatusesHomeTimelineLimit.ResetDateTime;
+            return "You have " + rateLimit.SearchTweetsLimit.Remaining + " tokens left. It resets at " +
+                   rateLimit.SearchTweetsLimit.ResetDateTime;
         }
 
        /* public static string SearchTwitterJson()
