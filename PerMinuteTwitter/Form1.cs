@@ -15,6 +15,7 @@ namespace PerMinuteTwitter
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,5 +29,17 @@ namespace PerMinuteTwitter
         {
             Application.Exit();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void appNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+
     }
 }

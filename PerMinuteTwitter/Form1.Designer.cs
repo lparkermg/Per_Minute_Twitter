@@ -61,8 +61,10 @@
             // 
             // appNotifyIcon
             // 
-            this.appNotifyIcon.Text = "notifyIcon1";
+            this.appNotifyIcon.ContextMenuStrip = this.mainMenu;
+            this.appNotifyIcon.Text = "PerMinuteTwitter";
             this.appNotifyIcon.Visible = true;
+            this.appNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.appNotifyIcon_MouseDoubleClick);
             // 
             // mainMenu
             // 
@@ -71,7 +73,7 @@
             this.toolStripSeparator1,
             this.exitAppItem});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(157, 76);
+            this.mainMenu.Size = new System.Drawing.Size(157, 54);
             // 
             // optionsItem
             // 
@@ -100,6 +102,8 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
